@@ -6,9 +6,7 @@ const app = express();
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
-app.get('/api/contacts', (req, res) => {
-    res.send('Contacts');
-});
+app.use('/api/contacts', require('./routes/contactRoutes'));
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
