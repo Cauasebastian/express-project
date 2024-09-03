@@ -13,6 +13,7 @@ app.use(errorHandler);
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
+app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/contacts', require('./routes/contactRoutes'));
 
 app.listen(port, () => {
